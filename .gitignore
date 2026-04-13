@@ -1,0 +1,37 @@
+# Dependências
+node_modules/
+
+# Ambiente e credenciais
+.env
+.env.local
+
+# Certificados e chaves privadas
+certs/
+*.pfx
+*.p12
+*.key
+*.pem
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build / Dist
+dist/
+build/
+
+# Temporários
+temp/
+tmp/
+*.tmp

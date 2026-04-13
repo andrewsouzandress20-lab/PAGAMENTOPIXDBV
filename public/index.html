@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pagamento para Desbravadores Aguia do Norte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="layout">
+    <section class="hero">
+      <p class="eyebrow">Contribuicao via PIX</p>
+      <h1>Pagamento para Desbravadores Aguia do Norte!</h1>
+      <p class="subtitle">Escolha um valor rapido ou digite qualquer quantia para gerar o PIX. Nome e CPF do pagador sao sempre opcionais.</p>
+      <div class="key-card">
+        <span>Chave PIX fixa</span>
+        <strong id="fixedKey">dd5bbbba-51d3-4f30-b4ba-3fdc4aec9132</strong>
+      </div>
+    </section>
+
+    <section class="panel">
+      <form id="pixForm" class="form">
+        <div class="payer-grid">
+          <label>
+            <span>Nome do pagador opcional</span>
+            <input id="payerName" name="payerName" type="text" maxlength="40" placeholder="Opcional">
+          </label>
+
+          <label>
+            <span>CPF do pagador opcional</span>
+            <input id="payerCpf" name="payerCpf" type="text" inputmode="numeric" maxlength="14" placeholder="Opcional">
+          </label>
+        </div>
+
+        <div class="preset-block">
+          <span>Valores sugeridos</span>
+          <div class="preset-grid" id="presetGrid">
+            <button type="button" class="preset-button" data-value="5">R$ 5</button>
+            <button type="button" class="preset-button" data-value="10">R$ 10</button>
+            <button type="button" class="preset-button" data-value="15">R$ 15</button>
+            <button type="button" class="preset-button" data-value="20">R$ 20</button>
+            <button type="button" class="preset-button" data-value="25">R$ 25</button>
+            <button type="button" class="preset-button" data-value="30">R$ 30</button>
+            <button type="button" class="preset-button" data-value="50">R$ 50</button>
+            <button type="button" class="preset-button" data-value="100">R$ 100</button>
+          </div>
+        </div>
+
+        <label>
+          <span>Digite outro valor</span>
+          <input id="amount" name="amount" type="number" min="0.01" step="0.01" placeholder="0,00" value="10" required>
+        </label>
+
+        <button id="generateButton" type="submit">Gerar PIX para pagamento</button>
+      </form>
+    </section>
+  </main>
+
+  <div id="pixModal" class="modal hidden">
+    <div class="modal-backdrop" data-close-modal="true"></div>
+    <section class="modal-card">
+      <button id="closeModalButton" type="button" class="modal-close">Fechar</button>
+
+      <div id="result" class="result">
+        <div class="qr-wrapper">
+          <div id="qrcode" class="qrcode"></div>
+        </div>
+
+        <button id="copyButton" type="button" class="secondary">Copiar pagamento PIX</button>
+        <p id="feedback" class="feedback hidden">Pagamento PIX copiado.</p>
+
+        <div class="details">
+          <div class="detail-row">
+            <span>Valor</span>
+            <strong id="resultAmount">R$ 0,00</strong>
+          </div>
+          <div class="detail-row">
+            <span>TXID</span>
+            <strong id="resultTxid">-</strong>
+          </div>
+          <div class="detail-row">
+            <span>Chave</span>
+            <strong id="resultKey">-</strong>
+          </div>
+        </div>
+
+        <label class="payload-block">
+          <span>Copia e cola</span>
+          <textarea id="payloadText" rows="8" readonly></textarea>
+        </label>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
