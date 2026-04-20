@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Sora", "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-brand-950: #020617;
+  --color-brand-900: #0f172a;
+  --color-neon-blue: #00F3FF;
+  --color-neon-green: #39FF14;
+  --color-gold-500: #FFD700;
+  --color-gold-600: #DAA520;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 antialiased;
+  }
+}
+

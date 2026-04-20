@@ -1,0 +1,6 @@
+{
+  "name": "Pagamento Águia do Norte",
+  "description": "Interface modernizada para pagamentos via PIX para o Clube de Desbravadores Águia do Norte.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
